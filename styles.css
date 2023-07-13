@@ -1,0 +1,359 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Myriad Pro Regular';
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #1f1f1f; /*#e2e4df*/
+    color: rgb(158, 158, 158);
+    background-image: url("imagens/testebackground.png");
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: 100%;
+}
+
+header .headerMain {
+    min-height: 50px;
+    text-shadow: 1px 1px #d1d1d1, -1px 1px #d1d1d1, 1px -1px #d1d1d1, -1px -1px #d1d1d1;
+    background-image: linear-gradient(0deg, #444444, #252525); 
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+}
+
+header .headerMain .logo h1, 
+header .headerMain .logo p {
+    text-shadow: 1px 1px #6d6d6d, -1px 1px #6d6d6d, 1px -1px #6d6d6d, -1px -1px #6d6d6d;
+}
+
+header .headerMain > * {
+    margin: auto 2vh;
+}
+
+header .headerMain .logo {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+header .headerMain .logo div > *{
+    color:hsl(0, 16%, 82%);
+    margin: 0px;
+}
+
+header .headerMain .logo img {
+    filter: drop-shadow(5px 5px 1px #0007);
+    height: 80px;
+}
+
+header .headerMain .title {
+    font-family: 'Myriad Pro Bold';
+    filter: drop-shadow(0px 3px 0px #616161);
+}
+
+.dropdown {
+    gap: 5px;
+    z-index: 1;
+    display: none;
+    padding: 0.2em;
+    min-height: 1em;
+    margin-top: -18px;
+    position: absolute;
+    flex-direction: column;
+    background-color: #878787;
+    border: 2px solid #545454;
+}
+
+.dropdown * {
+    text-shadow: none;
+}
+
+#navegacao .botao {
+    background-color: #878787;
+    text-shadow: none;
+    user-select: none;
+    transition: .2s;
+}
+
+#navegacao:hover .dropdown {
+    border-top: 0px;
+    display: flex;
+}
+
+.divisao {
+    height: 50px;
+    background-color: #444444;
+    background: radial-gradient(56.60px at 50% calc(100% - 78.00px),#444444 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
+    radial-gradient(56.60px at 50% calc(100% + 48.00px),#0000 99%,#444444 101%) 50% calc(100% - 30px)/120px 100% repeat-x; /* TEORIA POR TRÁS: https://css-tricks.com/how-to-create-wavy-shapes-patterns-in-css/*/
+}
+
+div.box {
+    background-repeat: no-repeat;
+    background-color: #3d3d3d;
+    border: 1px solid black;
+    background-size: contain;
+    position: absolute;
+    border-radius: 1em;
+    margin: 10px 30px;
+    max-width: 300px;
+    padding: 1em;
+}
+
+div.box.D {
+    right: 0;
+}
+
+.box h1, 
+.box h2 {
+    margin: 10px 0;
+}
+
+.box p {
+    margin: 0.2em;
+}
+
+.botao {
+    background-color: #0000;
+    border: 2px solid hsl(0, 0%, 33%);
+    text-align: center;
+    color: #fefefe;
+    padding: 1em;
+}
+
+a.botao.post { /*#bebebe*/
+    border: 2px solid #fefefe;
+    border-radius: 1em;
+    padding: 0.25em;
+    width: 100px;
+    margin: auto;
+}
+
+a:not(.postHeader *) {
+    font-size: medium;
+    color: #fefefe;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+header a,
+#navegacao .botao {
+    color: #3a3a3a!important;
+}
+
+header a:hover,
+#navegacao:hover > .botao {
+    text-shadow: 0px 0px 2px #d1d1d1, 0px 0px 5px #d1d1d1, 0px 0px 9px #d1d1d1, 0px 0px 12px #d1d1d1;
+}
+
+.botao > *:hover,
+a:hover:not(.postHeader *) {
+    font-size: 1.2em;
+    text-shadow: 0px 0px 2px #d1d1d1, 0px 0px 5px #d1d1d1, 0px 0px 9px #d1d1d1, 0px 0px 12px #d1d1d1;
+}
+
+.postagem .postContent a:hover {
+    font-size: initial;
+}
+
+a.botao.post:hover {
+    background-color: #c8cbc2;
+    font-size: initial;
+    text-shadow: 0px 0px 2px #fff0, 0px 0px 5px #fff0, 0px 0px 9px #fff0, 0px 0px 12px #fff0;
+}
+
+main {
+    flex-grow: 1;
+}
+
+main .mainContent {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    display: flex;
+    width: 50%;
+    gap: 0.5em;
+}
+
+.postagem {
+    background-image: linear-gradient(#272727, 4em, #313131 0%); /*#e2e4df*/
+    border: 1px solid black;
+    flex-direction: column;
+    border-radius: 1em;
+    max-width: 30vw;
+    display: flex;
+    padding: 1em;
+    gap: 10px;
+    font-size: 1.1em;
+    filter: drop-shadow(0 0 0 #000c);
+    transition: 0.2s;
+    margin-top: 1em;
+}
+
+.postagem:hover:not(.postagem.principal) {
+    filter: drop-shadow(0 1em 5px #000a);
+    margin-top: 0em;
+    margin-bottom: 1em;
+}
+
+.postagem.principal {
+    max-width: 100%;
+}
+
+.postagem.D {
+    align-self: flex-end;
+}
+
+.postHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.postHeader h1 {
+    margin: 0;
+}
+
+.textoPost *,
+.box p {
+    text-indent: 1em;
+}
+
+.postHeader img {
+    max-height: 14px;
+}
+
+.box hr,
+.postagem hr {
+    border-top: 0px solid #0000;
+    border-bottom: 0px solid #0000;
+    margin: 0 -1em;
+}
+
+.postContent {
+    display: flex;
+    gap: 15px;
+}
+
+.postContent img {
+    background-color: #66842477;
+    border-radius: 1em;
+    max-height: 150px;
+}
+
+.postContent img.gg{
+    max-height: 300px;
+}
+
+td, th {
+    padding: 1em;
+    border: 1px solid #1a1a1a;
+}
+
+.divisaoBottom {
+    height: 50px;
+    background-color: #444444;
+    background: radial-gradient(56.60px at 50% 78.00px,#444444 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
+    radial-gradient(56.60px at 50% -48px,#0000 99%,#444444 101%) 50% 30px/120px 100% repeat-x; /* TEORIA POR TRÁS: https://css-tricks.com/how-to-create-wavy-shapes-patterns-in-css/*/
+}
+
+footer .footerMain {
+    background-color: #444444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2em 1em;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Regular'), url('fontes/MYRIADPRO-REGULAR.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Myriad Pro Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Light'), url('fontes/MyriadPro-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Myriad Pro Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Bold'), url('fontes/MYRIADPRO-BOLD.woff') format('woff');
+}
+
+@media screen and (max-width: 1500px) {
+    main {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        gap: 2em;
+    }
+    
+    main .mainContent {
+        width: 70%;
+    }
+
+    div.box {
+        max-width: 60%;
+        position: static;
+        margin: 0!important; 
+    }
+
+    .postagem {
+        max-width: fit-content;
+    }
+}
+
+@media screen and (max-width: 937px) {
+    .postagem.principal .postContent {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 586px) {
+    .postagem .postContent{
+        margin: 0em;
+    }
+
+    .postagem .postContent p{
+        margin: 0.2em;
+    }
+
+    .postContent img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .postHeader h1 {
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .postHeader img {
+        display: none;
+    }
+}
